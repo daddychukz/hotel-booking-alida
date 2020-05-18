@@ -11,3 +11,25 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.App {
+  margin-top: 2rem;
+}
+
+h2 {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  color: #012C72;
+}
+
+.color-nav {
+  background-color: #8DB5AA;
+}
+
+.nav-font {
+  font-size: x-large;
+  color: white !important;
+}
+
+.navs {
+  margin-top: 15px;
+}
