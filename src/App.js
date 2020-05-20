@@ -1,5 +1,5 @@
-import React, { useContext } from 'react';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import React from 'react';
+import { BrowserRouter as Router, Switch } from 'react-router-dom';
 import Navigation from './components/navigation/Navbar';
 import Hompage from './components/homepage'
 
