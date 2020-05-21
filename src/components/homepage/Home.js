@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef, useContext } from 'react';
 import { Container, Row, Col, Form, Button, Image } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import { SearchContext } from '../context/SearchContext';
 import Search from './Search';
 
@@ -24,8 +25,8 @@ const Home = () => {
         }
     };
 
-    const updateSearch = poke => {
-        setSearch(poke);
+    const updateSearch = value => {
+        setSearch(value);
         setDisplay(false);
     };
     const onSearchChange = (e) => {
@@ -61,7 +62,9 @@ const Home = () => {
                                         key={i}
                                         tabIndex="0"
                                     >
-                                        {value}
+                                        <Link to={'/hotel/5ea81baa3851a633426eb827'}>
+                                            {value}
+                                        </Link>
                                     </div>
                                 );
                                 })}
