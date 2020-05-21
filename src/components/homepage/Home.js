@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef, useContext } from 'react';
 import { Container, Row, Col, Form, Button, Image } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import { SearchContext } from '../context/SearchContext';
 import Search from './Search';
 
@@ -9,7 +9,7 @@ const Home = () => {
     const [display, setDisplay] = useState(false);
     const [search, setSearch] = useState([]);
     const wrapperRef = useRef(null);
-
+    const history = useHistory();
 
     useEffect(() => {
         window.addEventListener("mousedown", handleClickOutside);
@@ -78,7 +78,9 @@ const Home = () => {
                                         alt=""
                                         fluid
                                     />
-                                    <Button style={{backgroundColor: "#8DB5AA", border: 'none', borderRadius: 0}} size="lg" block>See All Hotels</Button>
+                                    <Button style={{backgroundColor: "#8DB5AA", border: 'none', borderRadius: 0}} size="lg" block onClick={() => history.push("/hotels")}>
+                                        See All Hotels
+                                    </Button>
                                 </section>
                             </Col>
                         </Row>
