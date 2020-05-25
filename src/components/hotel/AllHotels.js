@@ -23,7 +23,8 @@ const AllHotels = () => {
             hotels.map((hotel) => (
                     <Media key={hotel.id} className="mb-5" style={{backgroundColor: '#8DB5AA', color: 'white', fontSize: '20px', width: '70%'}}>
                         <Image
-                            width={150}
+                            // width={150}
+                            style={{maxWidth: '40%'}}
                             className="mr-4"
                             src={hotel.image}
                             alt="hotel image"

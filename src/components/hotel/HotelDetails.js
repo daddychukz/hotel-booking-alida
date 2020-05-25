@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { Container, Row, Col, Image, Button } from 'react-bootstrap';
+import { useHistory } from 'react-router-dom';
 import { BASE_URL, headers } from '../constants/api';
 
 const HotelDetail = (props) => {
     const url = BASE_URL + `establishments/${props.match.params.hotelId}`;
     const [hotel, setHotel] = useState({});
-    console.log(hotel.selfCatering);
+    const history = useHistory();
     
     useEffect(() => {
         async function fetchHotel() {
@@ -92,7 +93,7 @@ const HotelDetail = (props) => {
                                 </Col>
                             </Row>
                         </article>
-                        <Button style={{border: 'none', borderRadius: 0}} size="lg" block>Book Now</Button>
+                        <Button style={{border: 'none', borderRadius: 0}} size="lg" block onClick={() => history.push("/hotels/enquiry/1234")}>Book Now</Button>
                     </Col>
                 </Row>
             </section>
