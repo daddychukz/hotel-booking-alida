@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef, useContext } from 'react';
 import { Container, Row, Col, Form, Button, Image } from 'react-bootstrap';
 import { Link, useHistory } from 'react-router-dom';
-import { SearchContext } from '../context/SearchContext';
+import { SearchContext } from '../../context/SearchContext';
 import Search from './Search';
 
 const Home = () => {

@@ -1,5 +1,5 @@
 import React, { createContext, useReducer, useEffect } from 'react';
-import { searchReducer } from '../reducers/searchReducer';
+import { searchReducer } from '../components/reducers/searchReducer';
 
 export const SearchContext = createContext();
 

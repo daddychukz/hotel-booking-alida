@@ -15,9 +15,9 @@ const Navigation = () => {
                 </Link>
             </Navbar.Brand>
             <Nav className="navs">
-                <Nav.Link className="nav-font" href="/">Home</Nav.Link>
-                <Nav.Link className="nav-font" href="/contact">Contact us</Nav.Link>
-                <Nav.Link className="nav-font" href="/login">Admin login</Nav.Link>
+                <Nav><Link className="nav-link" to={'/'}>Home</Link></Nav>
+                <Nav><Link className="nav-link" to={'/contact'}>Contact Us</Link> </Nav>
+                <Nav><Link className="nav-link" to={'/login'}>Admin login</Link></Nav>
             </Nav>
         </Navbar>
     );

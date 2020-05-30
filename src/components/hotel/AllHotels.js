@@ -1,7 +1,7 @@
 import React, { useContext, useEffect } from 'react';
 import { Row, Col, Button, Media, Container, Image } from 'react-bootstrap';
 import { useHistory } from 'react-router-dom';
-import { HotelContext } from '../context/HotelContext';
+import { HotelContext } from '../../context/HotelContext';
 import { BASE_URL, headers } from '../constants/api';
 
 const AllHotels = () => {

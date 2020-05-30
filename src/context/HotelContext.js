@@ -1,5 +1,5 @@
 import React, { createContext, useReducer } from 'react';
-import { hotelReducer } from '../reducers/hotelReducer';
+import { hotelReducer } from '../components/reducers/hotelReducer';
 
 export const HotelContext = createContext();
 
