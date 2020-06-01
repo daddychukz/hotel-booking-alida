@@ -8,6 +8,7 @@ import Booking from './components/booking';
 import Contact from './components/contact';
 import Login from './components/login/login';
 import { LoginContext } from './context/LoginContext';
+import Establishments from './components/admin/Establishments';
 
 const App = () => {
   const { login, setLogin, handleLogin } = useContext(LoginContext);
@@ -23,6 +24,7 @@ const App = () => {
             <Route exact path="/contact" component={Contact} />
             <Route exact path="/login" render={props => (<Login {...props} auth={{login, setLogin, handleLogin}} />)} />
             <Route exact path="/hotels/enquiry/:id" component={Booking} />
+            <Route exact path="/admin" component={Establishments} />
           </div>
         </React.Fragment>
       </Switch>
