@@ -31,7 +31,7 @@ const Establishments = () => {
                 establishments.map((enquiry) => (
                     <Col key={enquiry.id} md={4} className="pb-3">
                         <Card>
-                            <Card.Header style={{backgroundColor: '#8DB5AA'}}>Featured</Card.Header> 
+                            <Card.Header style={{backgroundColor: '#8DB5AA'}}>Establishment</Card.Header> 
                             <Card.Body>
                                <EstablishmentDetail
                                 enquiry={enquiry}
