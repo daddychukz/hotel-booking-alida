@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { Form, Col, Button, Row } from 'react-bootstrap';
 
-const EstablishmentDetail = (props) => {
+const EnquiryDetail = (props) => {
     useEffect(() => {
         if (props.acceptIds.length) {
             localStorage.setItem('AcceptIds', JSON.stringify(props.acceptIds));
@@ -62,4 +62,4 @@ const EstablishmentDetail = (props) => {
     }
 }
  
-export default EstablishmentDetail;
+export default EnquiryDetail;

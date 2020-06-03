@@ -1,7 +1,7 @@
 import React from 'react';
 import { Col, Button, Form } from 'react-bootstrap';
 
-const ContactForm = ({ message, setMessage, handleSubmitMessage }) => {
+const EstablishmentForm = ({ establishment, setEstablishment, handleSubmitEstablishment }) => {
     return (
         <Col md={7}>
             <article style={{backgroundColor: '#8DB5AA', color: 'white', padding: '20px'}}>
@@ -9,28 +9,12 @@ const ContactForm = ({ message, setMessage, handleSubmitMessage }) => {
                     <Form.Group>
                         <Form.Row>
                             <Form.Label column lg={3}>
-                             First Name
+                             Establishment
                             </Form.Label>
                             <Col>
                             <Form.Control
-                                type="text"
-                                placeholder="First Name"
-                                value={message.firstName}
-                                onChange={(e) => setMessage({...message, firstName: e.target.value})}
-                            />
-                            </Col>
-                        </Form.Row>
-                        <br />
-                        <Form.Row>
-                            <Form.Label column lg={3}>
-                            Last Name
-                            </Form.Label>
-                            <Col>
-                            <Form.Control
-                                type="text"
-                                placeholder="Last name"
-                                value={message.lastName}
-                                onChange={(e) => setMessage({...message, lastName: e.target.value})}
+                                value={establishment.name}
+                                onChange={(e) => setEstablishment({...establishment, name: e.target.value})}
                             />
                             </Col>
                         </Form.Row>
@@ -43,46 +27,104 @@ const ContactForm = ({ message, setMessage, handleSubmitMessage }) => {
                             <Form.Control
                                 type="email"
                                 placeholder="user@example.com"
-                                value={message.email}
-                                onChange={(e) => setMessage({...message, email: e.target.value})}
+                                value={establishment.email}
+                                onChange={(e) => setEstablishment({...establishment, email: e.target.value})}
                             />
                             </Col>
                         </Form.Row>
                         <br />
                         <Form.Row>
                             <Form.Label column lg={3}>
-                            Address
+                             Image
                             </Form.Label>
                             <Col>
                             <Form.Control
                                 type="text"
-                                placeholder="Address"
-                                value={message.address}
-                                onChange={(e) => setMessage({...message, address: e.target.value})}
+                                placeholder="http://"
+                                value={establishment.image}
+                                onChange={(e) => setEstablishment({...establishment, image: e.target.value})}
                             />
                             </Col>
                         </Form.Row>
                         <br />
                         <Form.Row>
                             <Form.Label column lg={3}>
-                            Message
+                             Price
+                            </Form.Label>
+                            <Col>
+                            <Form.Control
+                                type="number"
+                                placeholder="$"
+                                value={establishment.price}
+                                onChange={(e) => setEstablishment({...establishment, price: e.target.value})}
+                            />
+                            </Col>
+                        </Form.Row>
+                        <br />
+                        <Form.Row>
+                            <Form.Label column lg={3}>
+                             Max Guests
+                            </Form.Label>
+                            <Col>
+                                <Form.Control
+                                    type="number"
+                                    value={establishment.maxGuest}
+                                    onChange={(e) => setEstablishment({...establishment, maxGuest: e.target.value})}
+                                />
+                            </Col>
+                        </Form.Row>
+                        <br />
+                        <Form.Row>
+                            <Form.Label column lg={3}>
+                             Latitude
+                            </Form.Label>
+                            <Col>
+                                <Form.Control
+                                    value={establishment.latitude}
+                                    onChange={(e) => setEstablishment({...establishment, latitude: e.target.value})}
+                                />
+                            </Col>
+                            <Form.Label column lg={2}>
+                             Longitude
+                            </Form.Label>
+                            <Col>
+                                <Form.Control
+                                    value={establishment.longitude}
+                                    onChange={(e) => setEstablishment({...establishment, longitude: e.target.value})}
+                                />
+                            </Col>
+                        </Form.Row>
+                        <br />
+                        <Form.Row>
+                            <Form.Label column lg={3}>
+                            Description
                             </Form.Label>
                             <Col>
                             <Form.Control
                                 as="textarea"
                                 rows="3"
-                                placeholder="Address"
-                                value={message.message}
-                                onChange={(e) => setMessage({...message, message: e.target.value})}
+                                placeholder=""
+                                value={establishment.description}
+                                onChange={(e) => setEstablishment({...establishment, description: e.target.value})}
                             />
                             </Col>
+                        </Form.Row>
+                        <br />
+                        <Form.Row>
+                            <Form.Label column lg={3}/>
+                            <Form.Check
+                                type="checkbox"
+                                label="Self-Catering"
+                                checked={establishment.selfCatering}
+                                onChange={(e) => setEstablishment({...establishment, selfCatering: !establishment.selfCatering})}
+                            />
                         </Form.Row>
                     </Form.Group>
                 </Col>
             </article>
-            <Button style={{border: 'none', borderRadius: 0}} onClick={handleSubmitMessage} size="lg" block>Send Message</Button>
+            <Button style={{border: 'none', borderRadius: 0}} onClick={handleSubmitEstablishment} size="lg" block>Submit</Button>
         </Col>
     );
 }
  
-export default ContactForm;
+export default EstablishmentForm;

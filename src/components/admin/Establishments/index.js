@@ -1,53 +1,61 @@
 import React, { useState, useEffect } from 'react';
-import { Col, Card, Row, Container, Spinner } from 'react-bootstrap';
-import { BASE_URL, headers } from "../../constants/api";
-import EstablishmentDetail from './Establishment';
+import uuid from 'uuid/dist/v1';
+import { Container, Col, Row } from 'react-bootstrap';
+import EstablishmentForm from './EstablishmentForm';
 
-const Establishments = () => {
-    const [establishments, setEstablishments] = useState([]);
-    const [acceptIds, setAcceptIds] = useState(JSON.parse(localStorage.getItem('AcceptIds')) || [])
+const AddEstablishment = () => {
+    const [establishments, setEstablishments] = useState(JSON.parse(localStorage.getItem('Establishments')) || [])
+    const [establishment, setEstablishment] = useState({
+        id: uuid(),
+        name: '',
+        email: '',
+        image: '',
+        price: '',
+        maxGuest: '',
+        latitude: '',
+        longitude: '',
+        selfCatering: false,
+        description: ''
+    });
+    const [submit, setSubmit] = useState(false);
+
+    const handleSubmitEstablishment = (e) => {
+        e.preventDefault();
+        setEstablishments([...establishments, establishment]);
+        setSubmit(true)
+    }
 
     useEffect(() => {
-        const url = BASE_URL + "enquiries";
-        async function fetchEstablishments() {
-            await fetch(url, {headers})
-            .then(res => res.json())
-            .then(data => setEstablishments(data))
+        if (establishments.length) {
+            console.log(establishments)
+            localStorage.setItem('Establishments', JSON.stringify(establishments));
         }
-        fetchEstablishments();
-    }, []);
-
-    const handleSetStatus = (id, status) => {
-        setAcceptIds([...acceptIds, { id, status}])
-        console.log(id)
-    };
-
+    },[submit]) // eslint-disable-line react-hooks/exhaustive-deps
 
     return (
-        <Container className="margin">
-            <Row>
-            {
-                establishments.length ?
-                establishments.map((enquiry) => (
-                    <Col key={enquiry.id} md={4} className="pb-3">
-                        <Card>
-                            <Card.Header style={{backgroundColor: '#8DB5AA'}}>Establishment</Card.Header> 
-                            <Card.Body>
-                               <EstablishmentDetail
-                                enquiry={enquiry}
-                                handleBtnAccept={handleSetStatus}
-                                handleBtnDecline={handleSetStatus}
-                                acceptIds={acceptIds}
-                               />
-                            </Card.Body>
-                        </Card>            
+        <Container>
+            <section>
+                <Row>
+                    <Col md={{ offset: 2 }} style={{ paddingLeft: '4em'}}>
+                    {
+                        submit ? <h2>New Establishment Created!</h2>
+                        : <h2>Create a new Establishment</h2>
+                    }
                     </Col>
-                ))
-                : <Spinner animation="grow" />
-            }
-            </Row>
+                </Row>
+                {
+                    submit ? null :
+                    <Row className="justify-content-md-center">
+                        <EstablishmentForm
+                            establishment={establishment}
+                            setEstablishment={setEstablishment}
+                            handleSubmitEstablishment={handleSubmitEstablishment}
+                        />
+                    </Row>
+                }
+            </section>
         </Container>
-    )
+    );
 }
  
-export default Establishments;
+export default AddEstablishment;

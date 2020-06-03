@@ -23,7 +23,7 @@ const AdminComp = () => {
                 <Col>
                     <div className="text-center" style={{ backgroundColor: '#8DB5AA', height: '100%', padding: '100px 0px' }}>
                         <h4>Create Establishment</h4>
-                        <Link to={""}>
+                        <Link to={"/admin/establishment"}>
                             <Image
                                 src="/estb.svg"
                                 width="70"
