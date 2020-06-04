@@ -12,7 +12,7 @@ const RespondModal = ({ open, handleClick, message, setMessage, handleClose }) =
           <Modal.Body>
             <Form>
                 <Form.Group controlId="formGroupEmail">
-                    <Form.Label>Respond to ...</Form.Label>
+                    <Form.Label>Respond to {message.name}</Form.Label>
                     <Form.Control
                         as="textarea"
                         rows="5"
@@ -24,7 +24,7 @@ const RespondModal = ({ open, handleClick, message, setMessage, handleClose }) =
             </Form>
           </Modal.Body>
           <Modal.Footer>
-                <Button variant="secondary" onClick={() => handleClose(null, false)}>Close</Button>
+                <Button variant="secondary" onClick={() => handleClose(null, null, false)}>Close</Button>
                 <Button variant="primary" onClick={handleClick}>Send Message</Button>
           </Modal.Footer>
         </Modal>

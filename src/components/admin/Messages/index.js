@@ -1,17 +1,20 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { Col, Card, Row, Container, Spinner } from 'react-bootstrap';
 import { BASE_URL, headers } from "../../constants/api";
 import MessageDetail from './Message';
 import RespondModal from './Respond';
+import { NotificationContext } from '../../../context/NotificationContext';
 
 const Messages = () => {
     const [messages, setMessages] = useState([]);
     const [responses, setResponses] = useState(JSON.parse(localStorage.getItem('Responses')) || [])
     const [message, setMessage] = useState({
+        name: '',
         email: '',
         message: ''
     })
     const [modal, setModal] = useState(false);
+    const { dispatchNotification } = useContext(NotificationContext);
 
     useEffect(() => {
         const url = BASE_URL + "contacts";
@@ -26,12 +29,13 @@ const Messages = () => {
     const handleSendMessage = () => {
         setResponses([...responses, message]);
         setModal(false);
+        dispatchNotification({ type: 'SUCCESS', message: 'Message sent!!' })
     };
 
-    const handleModalAction = (email, value) => {
+    const handleModalAction = (name, email, value) => {
         setModal(value)
         if(email){
-            setMessage({...message, email})
+            setMessage({...message, email, name})
         }
     };
 

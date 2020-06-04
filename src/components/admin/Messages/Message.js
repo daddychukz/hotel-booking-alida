@@ -35,7 +35,7 @@ const MessageDetail = (props) => {
                         />
                     </Col>
                 </Form.Group>
-                <Button onClick={() => props.handleOpenModal(props.contact.email, true)} variant="primary">Respond</Button>
+                <Button onClick={() => props.handleOpenModal(props.contact.name, props.contact.email, true)} variant="primary">Respond</Button>
             </>
         }
     </Form>
