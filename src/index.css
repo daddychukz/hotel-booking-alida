@@ -33,3 +33,9 @@ h2 {
 .navs {
   margin-top: 15px;
 }
+
+textarea {
+  resize: none;
+  background-color: white !important;
+  border: none;
+}

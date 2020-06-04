@@ -11,6 +11,7 @@ import { LoginContext } from './context/LoginContext';
 import Admin from './components/admin';
 import Enquiries from './components/admin/Enquiries';
 import Establishments from './components/admin/Establishments';
+import Messages from './components/admin/Messages'
 
 const App = () => {
   const { login, setLogin, handleLogin } = useContext(LoginContext);
@@ -29,6 +30,7 @@ const App = () => {
             <Route exact path="/admin" component={Admin} />
             <Route exact path="/admin/enquiries" component={Enquiries} />
             <Route exact path="/admin/establishment" component={Establishments} />
+            <Route exact path="/admin/messages" component={Messages} />
           </div>
         </React.Fragment>
       </Switch>

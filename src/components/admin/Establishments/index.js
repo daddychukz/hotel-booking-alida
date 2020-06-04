@@ -34,12 +34,12 @@ const AddEstablishment = () => {
 
     return (
         <Container>
-            <section>
+            <section style={{height: '100vh'}}>
                 <Row>
                     <Col md={{ offset: 2 }} style={{ paddingLeft: '4em'}}>
                     {
-                        submit ? <h2>New Establishment Created!</h2>
-                        : <h2>Create a new Establishment</h2>
+                        submit ? <h3>New Establishment Created!</h3>
+                        : <h3>Create a new Establishment</h3>
                     }
                     </Col>
                 </Row>
