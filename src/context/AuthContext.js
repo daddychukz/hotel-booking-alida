@@ -5,7 +5,7 @@ export default (ComposedComponent) => {
 
         componentWillMount() {
             const login = JSON.parse(localStorage.getItem('login'));
-            if (!login.username) {
+            if (!login.isAuthenticated) {
                 this.props.history.push('/');
             }
         }

@@ -4,26 +4,25 @@ import LoginForm from './LoginForm';
 
 class Login extends React.Component {
     componentDidMount() {
-        // const login = JSON.parse(localStorage.getItem('login'));
-        if (this.props.auth.login.isAuthenticated) {
+        const login = JSON.parse(localStorage.getItem('login'));
+        if (login.isAuthenticated) {
             this.props.history.push('/admin');
         }
     }
 
     handleLogin(e) {
         e.preventDefault();
-        const { login, setLogin } = this.props.auth;
+        const { login } = this.props.auth;
         const user = {
             username: login.username,
             password: login.password
         };
-        // localStorage.setItem('login', JSON.stringify(user))
-        const admin = JSON.parse(localStorage.getItem('login'));
-        if (admin && (user.username === admin.username)) {
-            setLogin({ ...login, isAuthenticated: true })
-            this.props.history.push('/admin');
+        let admin = JSON.parse(localStorage.getItem('login'));
+        if (admin && (user.username === admin.username && user.password === admin.password)) {
+            admin.isAuthenticated = true;
+            localStorage.setItem('login', JSON.stringify(admin));
+            window.location.replace('/admin');
         }
-        console.log(login)
     }
 
     render() {

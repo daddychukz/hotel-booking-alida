@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Navbar, Nav, Image } from 'react-bootstrap';
 
-const Navigation = () => {
+const GuestNavigation = () => {
     return (
         <Navbar className="color-nav justify-content-between">
             <Navbar.Brand to="/">
@@ -23,4 +23,4 @@ const Navigation = () => {
     );
 }
  
-export default Navigation;
+export default GuestNavigation;

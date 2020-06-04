@@ -1,13 +1,7 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { Form, Col, Button, Row } from 'react-bootstrap';
 
 const MessageDetail = (props) => {
-    // useEffect(() => {
-    //     if (props.acceptIds.length) {
-    //         localStorage.setItem('AcceptIds', JSON.stringify(props.acceptIds));
-    //     }
-    // },[props.acceptIds]) // eslint-disable-line react-hooks/exhaustive-deps
-
     return (
         <Form>
         {

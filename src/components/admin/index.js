@@ -35,7 +35,7 @@ const AdminComp = () => {
                 <Col>
                     <div className="text-center" style={{ backgroundColor: '#8DB5AA', height: '100%', padding: '100px 0px' }}>
                         <h4>Messages</h4>
-                        <Link to={""}>
+                        <Link to={"/admin/messages"}>
                             <Image
                                 src="/messages.svg"
                                 width="70"

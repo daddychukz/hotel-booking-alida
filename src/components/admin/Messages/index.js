@@ -55,7 +55,6 @@ const Messages = () => {
                                <MessageDetail
                                 contact={contact}
                                 handleOpenModal={handleModalAction}
-                                // acceptIds={acceptIds}
                                />
                             </Card.Body>
                         </Card>            
