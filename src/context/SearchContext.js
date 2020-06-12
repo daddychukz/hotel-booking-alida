@@ -5,7 +5,7 @@ export const SearchContext = createContext();
 
 const SearchContextProvider = (props) => {
     const [options, dispatchOptions] = useReducer(searchReducer, [], () => {
-        const localData = localStorage.getItem('search-item').split(',');
+        const localData = localStorage.getItem('search-item') && localStorage.getItem('search-item').split(',');
         return localData ? localData : []        // set default value from localstorage data
     });
     useEffect(() => {

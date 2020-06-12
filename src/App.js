@@ -16,7 +16,7 @@ import Messages from './components/admin/Messages';
 import AuthContext from './context/AuthContext';
 
 const App = () => {
-  const { isAuthenticated } = JSON.parse(localStorage.getItem('login'));
+  const { isAuthenticated } = JSON.parse(localStorage.getItem('login')) || false;
   const { login, setLogin, handleLogin } = useContext(LoginContext);
   return (
     <Router>
@@ -27,7 +27,7 @@ const App = () => {
             <AdminNavigation /> :
             <GuestNavigation />
           }
-          <div className="App">
+          <div className="container">
             <Route exact path="/" component={Hompage} />
             <Route exact path="/hotel/:hotelId" component={HotelDetail} />
             <Route exact path="/hotels" component={AllHotels} />
@@ -39,10 +39,23 @@ const App = () => {
             <Route exact path="/admin/establishment" component={AuthContext(Establishments)} />
             <Route exact path="/admin/messages" component={AuthContext(Messages)} />
           </div>
+          <Footer/>
         </React.Fragment>
       </Switch>
     </Router>
   );
+}
+
+const Footer = () => {
+  return (
+    <footer>
+      <ul className="footer-options">
+        <li className="footer-link"><a href="google.com" className="footer-linktext">Legal</a></li>
+        <li className="footer-link"><a href="google.com" className="footer-linktext">Contact Us</a></li>
+      </ul>
+      <span>© 2019 Developed by Pat. All Rights Reserved.</span>
+	  </footer>
+  )
 }
 
 export default App;

@@ -19,8 +19,7 @@ const HotelDetail = (props) => {
     }, []) // eslint-disable-line react-hooks/exhaustive-deps
 
     return (
-        <Container>
-            <section style={{height: '100vh'}}>
+            <section>
                 <Row>
                     <Col>
                         <h2>{hotel.name}</h2>
@@ -42,7 +41,6 @@ const HotelDetail = (props) => {
                                     <p>Guest</p>
                                 </Col>
                                 <Col sm={2}>
-                                    >
                                 </Col>
                                 <Col>
                                     <p>{hotel.maxGuests}</p>
@@ -53,7 +51,6 @@ const HotelDetail = (props) => {
                                     <p>Price</p>
                                 </Col>
                                 <Col sm={2}>
-                                    >
                                 </Col>
                                 <Col>
                                     <p>{hotel.price}</p>
@@ -64,7 +61,6 @@ const HotelDetail = (props) => {
                                     <p>Self-catering</p>
                                 </Col>
                                 <Col sm={2}>
-                                    >
                                 </Col>
                                 <Col>
                                     <p>{`${hotel.selfCatering}`}</p>
@@ -75,7 +71,6 @@ const HotelDetail = (props) => {
                                     <p>Email</p>
                                 </Col>
                                 <Col sm={2}>
-                                    >
                                 </Col>
                                 <Col>
                                     <p>{hotel.email}</p>
@@ -86,7 +81,6 @@ const HotelDetail = (props) => {
                                     <p>Description</p>
                                 </Col>
                                 <Col sm={2}>
-                                    >
                                 </Col>
                                 <Col>
                                     <p>{hotel.description}</p>
@@ -97,7 +91,6 @@ const HotelDetail = (props) => {
                     </Col>
                 </Row>
             </section>
-        </Container>
     );
 }
  

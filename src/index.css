@@ -12,9 +12,9 @@ code {
     monospace;
 }
 
-.App {
+/* .App {
   margin-top: 2rem;
-}
+} */
 
 h2 {
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
@@ -39,3 +39,43 @@ textarea {
   background-color: white !important;
   border: none;
 }
+
+.container {
+  margin-top: 1em;
+  /* min-height: calc(100vh - 4rem); */
+  /* display: flex; */
+  justify-content: center;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+	font-size: small;
+  color: #fff;
+  background-color: #262626;
+	display: flex;
+  width: 100vw;
+  height: 4rem;
+}
+
+.footer-options {
+		width: 50vw;
+		display: flex;
+		justify-content: flex-start;
+    padding-inline-start: 20px;
+    align-items: center;
+}
+
+.footer-link {
+	 	padding: 0 20px;
+  	list-style: none;
+}
+	
+
+footer span {
+		width: 50vw;
+		display: flex;
+		justify-content: flex-end;
+		padding: 0 20px;
+    align-items: center;
+	}

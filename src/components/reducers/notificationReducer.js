@@ -23,9 +23,7 @@ export const notificationReducer = (state, action) => {
         case 'SUCCESS':
             return toastr.success(action.message)
         case 'ERROR':
-            return (
-                console.log(action),
-                toastr.error(action.message))
+            return toastr.error(action.message)
         default:
             throw new Error('Unexpected Action')
     }
